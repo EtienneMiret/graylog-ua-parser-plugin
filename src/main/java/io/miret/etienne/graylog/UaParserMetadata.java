@@ -5,7 +5,6 @@ import org.graylog2.plugin.ServerStatus;
 import org.graylog2.plugin.Version;
 
 import java.net.URI;
-import java.util.Collections;
 import java.util.Set;
 
 import static java.util.Collections.emptySet;
@@ -37,7 +36,9 @@ public class UaParserMetadata implements PluginMetaData {
 
   @Override
   public Version getVersion () {
-    return new Version (1, 0, 0, "SNAPSHOT");
+    com.github.zafarkhaja.semver.Version semver =
+        com.github.zafarkhaja.semver.Version.valueOf ("1.0.0-SNAPSHOT");
+    return new Version (semver);
   }
 
   @Override
@@ -47,7 +48,9 @@ public class UaParserMetadata implements PluginMetaData {
 
   @Override
   public Version getRequiredVersion () {
-    return new Version (2, 4, 0);
+    com.github.zafarkhaja.semver.Version semver =
+        com.github.zafarkhaja.semver.Version.valueOf ("2.4.0");
+    return new Version (semver);
   }
 
   @Override
