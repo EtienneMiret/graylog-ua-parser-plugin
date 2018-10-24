@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>io.miret.etienne.graylog</groupId>
+  <groupId>io.miret.etienne</groupId>
   <artifactId>graylog-plugin-ua-parser</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>${project.artifactId}</name>
-  <description>Graylog2 ${project.artifactId} plugin.</description>
-  <url>http://www.graylog2.org</url>
+  <description>Graylog2 UA parser plugin.</description>
+  <url>https://github.com/EtienneMiret/graylog-ua-parser-plugin</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
