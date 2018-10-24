@@ -1,9 +1,14 @@
 package io.miret.etienne.graylog;
 
 import org.graylog2.plugin.PluginMetaData;
+import org.graylog2.plugin.ServerStatus;
 import org.graylog2.plugin.Version;
 
 import java.net.URI;
+import java.util.Collections;
+import java.util.Set;
+
+import static java.util.Collections.emptySet;
 
 /**
  * Implement the PluginMetaData interface here.
@@ -43,6 +48,11 @@ public class UaParserMetadata implements PluginMetaData {
   @Override
   public Version getRequiredVersion () {
     return new Version (2, 4, 0);
+  }
+
+  @Override
+  public Set<ServerStatus.Capability> getRequiredCapabilities () {
+    return emptySet ();
   }
 
 }

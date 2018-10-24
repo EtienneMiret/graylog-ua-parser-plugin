@@ -8,8 +8,6 @@ import org.graylog2.plugin.PluginModule;
 public class UaParserModule extends PluginModule {
   @Override
   protected void configure () {
-    registerPlugin (UaParserMetadata.class);
-
     /* Register your plugin types here.
      *
      * Examples:
