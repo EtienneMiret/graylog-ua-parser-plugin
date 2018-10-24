@@ -1,4 +1,4 @@
-package io.miret.etienne.graylog;
+package io.miret.etienne.graylog.ua_parser;
 
 import org.graylog2.plugin.PluginModule;
 

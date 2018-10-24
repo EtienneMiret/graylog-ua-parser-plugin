@@ -1,4 +1,4 @@
-package io.miret.etienne.graylog;
+package io.miret.etienne.graylog.ua_parser;
 
 /**
  * This is the plugin. Your class should implement one of the existing plugin
