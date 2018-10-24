@@ -4,7 +4,10 @@ import org.graylog2.plugin.PluginMetaData;
 import org.graylog2.plugin.ServerStatus;
 import org.graylog2.plugin.Version;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
+import java.util.Properties;
 import java.util.Set;
 
 import static java.util.Collections.emptySet;
@@ -36,8 +39,14 @@ public class UaParserMetadata implements PluginMetaData {
 
   @Override
   public Version getVersion () {
+    Properties properties = new Properties ();
+    try (InputStream metadata = UaParserMetadata.class.getResourceAsStream ("metadata.properties")) {
+      properties.load (metadata);
+    } catch (IOException e) {
+      throw new RuntimeException ("Could not read metadata.properties.", e);
+    }
     com.github.zafarkhaja.semver.Version semver =
-        com.github.zafarkhaja.semver.Version.valueOf ("1.0.0-SNAPSHOT");
+        com.github.zafarkhaja.semver.Version.valueOf (properties.getProperty ("version"));
     return new Version (semver);
   }
 
