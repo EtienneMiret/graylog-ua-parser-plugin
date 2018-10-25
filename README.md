@@ -1,16 +1,12 @@
-Graylog2 Plugin - UaParser
-====================================
+# Graylog2 Plugin - UaParser
 
-Welcome to your new Graylog2 plugin!
+This plugin for [Graylog 2.4][1] provides a message processor that will parse
+User-Agent strings from the "agent" field of messages.
 
+## Build
 
-Getting started for users
--------------------------
-
-This project is using Maven and requires Java 7 or higher.
-
-* Clone this repository.
 * Run `mvn package` to build a JAR file.
-* Optional: Run `mvn jdeb:jdeb` and `mvn rpm:rpm` to create a DEB and RPM package respectively.
-* Copy generated jar file in target directory to your Graylog2 server plugin directory.
-* Restart the Graylog2 server.
+* Run `mvn jdeb:jdeb` and `mvn rpm:rpm` to create a DEB and RPM package
+  respectively.
+
+[1]: https://www.graylog.org/
