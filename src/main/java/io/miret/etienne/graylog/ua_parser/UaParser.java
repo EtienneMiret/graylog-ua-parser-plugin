@@ -20,8 +20,7 @@ public class UaParser implements MessageProcessor {
       if (agent != null) {
         Client client = parser.parse (agent);
         if (client.userAgent != null) {
-          String version = String.format ("%s.%s.%s",
-              client.userAgent.major, client.userAgent.minor, client.userAgent.patch);
+          String version = version (client.userAgent.major, client.userAgent.minor, client.userAgent.patch);
           message.addField ("client.userAgent.family", client.userAgent.family);
           message.addField ("client.userAgent.version", version);
           message.addField ("client.userAgent.major", client.userAgent.major);
@@ -29,8 +28,7 @@ public class UaParser implements MessageProcessor {
           message.addField ("client.userAgent.patch", client.userAgent.patch);
         }
         if (client.os != null) {
-          String version = String.format ("%s.%s.%s",
-              client.os.major, client.os.minor, client.os.patch);
+          String version = version (client.os.major, client.os.minor, client.os.patch);
           message.addField ("client.os.family", client.os.family);
           message.addField ("client.os.version", version);
           message.addField ("client.os.major", client.os.major);
@@ -44,6 +42,19 @@ public class UaParser implements MessageProcessor {
       }
     }
     return messages;
+  }
+
+  private String version (String major, String minor, String patch) {
+    if (major == null) {
+      return null;
+    }
+    if (minor == null) {
+      return major;
+    }
+    if (patch == null) {
+      return String.format ("%s.%s", major, minor);
+    }
+    return String.format ("%s.%s.%s", major, minor, patch);
   }
 
 }
