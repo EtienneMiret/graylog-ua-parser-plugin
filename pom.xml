@@ -6,7 +6,7 @@
 
   <groupId>io.miret.etienne</groupId>
   <artifactId>graylog-plugin-ua-parser</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>${project.artifactId}</name>
@@ -101,7 +101,7 @@
             </manifest>
             <manifestEntries>
               <Implementation-Title>${project.name}</Implementation-Title>
-              <Implementation-Version>${project.version}+${git.commit.id.full}</Implementation-Version>
+              <Implementation-Version>${project.version}</Implementation-Version>
               <Implementation-URL>${project.url}</Implementation-URL>
             </manifestEntries>
           </archive>
